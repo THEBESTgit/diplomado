@@ -8,6 +8,12 @@ const sequelize = new Sequelize(
         host: process.env.DB_HOST,
         dialect: process.env.DB_DB_DIALECT,
         logging: console.log,
+        dialectOptions:{
+            ssl: {
+                require: true,
+                rejectUnauthorized: false,
+            }
+        }
         
     }
 
